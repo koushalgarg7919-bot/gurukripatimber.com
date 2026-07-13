@@ -68,9 +68,20 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 .hub-thumb{width:100%;border-radius:10px;display:block;margin-bottom:6px;border:1.5px solid var(--espresso)}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px}
 
-ul.uses li b{color:var(--teak)}</style></head>
+ul.uses li b{color:var(--teak)}
+.nav-toggle{display:none;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 6px}
+@media(max-width:820px){
+  .nav-toggle{display:block;order:2}
+  nav .wrap{flex-wrap:wrap}
+  .logo{order:1}
+  .wa-nav{order:3}
+  .nav-links{display:none;width:100%;order:4;flex-direction:column;gap:16px;padding:18px 0 6px;border-top:1px solid rgba(246,239,227,.15);margin-top:12px}
+  .nav-links.nav-open{display:flex}
+  .nav-links a{font-size:.95rem}
+}
+</style></head>
 <body>
-<nav><div class="wrap"><a href="../../" class="logo">Guru Kripa <span>Timber</span></a><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20paints" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
+<nav id="nav"><div class="wrap"><a href="/" class="logo">Guru Kripa <span>Timber</span></a><button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button><div class="nav-links" id="navLinks"><a href="/timber/">Timber</a><a href="/plywood/">Plywood</a><a href="/boards/">Boards</a><a href="/doors/">Doors</a><a href="/veneers/">Veneers</a><a href="/decoratives/">Decoratives</a><a href="/paints/">Paints</a><a href="/hardware/">Hardware</a><a href="/furniture/">Furniture</a><a href="/modular-kitchens/">Kitchens</a><a href="/about/">About</a></div><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20paints" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
 <header class="hero"><div class="wrap">
 <p class="crumbs"><a href="../../">Home</a> › <a href="../">Paints</a> › Painting Tools & Accessories</p>
 <p class="eyebrow">Mohali · Serving Punjab & Haryana</p>
@@ -95,4 +106,14 @@ ul.uses li b{color:var(--teak)}</style></head>
 <p style="margin-top:18px"><a class="btn btn-wa" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20the%20full%20paints%20range%20and%20rates" target="_blank" rel="noopener">Ask full range on WhatsApp</a></p></div></section>
 <footer><div class="wrap">© Guru Kripa Timber & Plywood · C-30, Phase 2, Industrial Area, Mohali (Sahibzada Ajit Singh Nagar), Punjab · <a href="tel:+917696449897" style="color:var(--brass)">+91 76964 49897</a><br>Dulux gallery · Asian Paints · Sirca · Texture · Putty · Serving Chandigarh, Panchkula, Zirakpur & all Punjab-Haryana</div></footer>
 <a class="wa-sticky" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20details%20and%20rate%20for%20Painting%20Tools%20%26%20Accessories" target="_blank" rel="noopener">💬 Get details on WhatsApp</a>
+
+<script>
+(function(){
+  var btn=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(btn&&links){
+    btn.addEventListener('click',function(){ links.classList.toggle('nav-open'); });
+  }
+})();
+</script>
 </body></html>

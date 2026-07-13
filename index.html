@@ -260,29 +260,22 @@ footer a{color:var(--brass)}
 @media(prefers-reduced-motion:reduce){.wa-float{animation:none}}
 .wa-icon{width:30px;height:30px;fill:#fff}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+
+.nav-toggle{display:none;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 6px}
+@media(max-width:820px){
+  .nav-toggle{display:block;order:2}
+  nav .wrap{flex-wrap:wrap}
+  .logo{order:1}
+  .wa-nav{order:3}
+  .nav-links{display:none;width:100%;order:4;flex-direction:column;gap:16px;padding:18px 0 6px;border-top:1px solid rgba(246,239,227,.15);margin-top:12px}
+  .nav-links.nav-open{display:flex}
+  .nav-links a{font-size:.95rem}
+}
 </style>
 </head>
 <body>
 
-<nav id="nav">
-  <div class="wrap">
-    <a href="#" class="logo">Guru Kripa <span>Timber</span></a>
-    <div class="nav-links">
-      <a href="/timber/">Timber</a>
-      <a href="/plywood/">Plywood</a>
-      <a href="/boards/">Boards</a>
-      <a href="/doors/">Doors</a>
-      <a href="/veneers/">Veneers</a>
-      <a href="/decoratives/">Decoratives</a>
-      <a href="/paints/">Paints</a>
-      <a href="/hardware/">Hardware</a>
-      <a href="/furniture/">Furniture</a>
-      <a href="/modular-kitchens/">Kitchens</a>
-      <a href="/about/">About</a>
-    </div>
-    <a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20products" target="_blank" rel="noopener">WhatsApp Us</a>
-  </div>
-</nav>
+<nav id="nav"><div class="wrap"><a href="/" class="logo">Guru Kripa <span>Timber</span></a><button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button><div class="nav-links" id="navLinks"><a href="/timber/">Timber</a><a href="/plywood/">Plywood</a><a href="/boards/">Boards</a><a href="/doors/">Doors</a><a href="/veneers/">Veneers</a><a href="/decoratives/">Decoratives</a><a href="/paints/">Paints</a><a href="/hardware/">Hardware</a><a href="/furniture/">Furniture</a><a href="/modular-kitchens/">Kitchens</a><a href="/about/">About</a></div><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20products" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
 
 <header class="hero">
   <div class="grain"></div>
@@ -456,16 +449,17 @@ footer a{color:var(--brass)}
 ===================================================== */
 const WHATSAPP = "917696449897";
 
-const SECTION_LINKS = {"Timber": "/timber/", "Plywood": "/plywood/", "HDHMR": "/boards/hdhmr/", "Flush Doors": "/doors/", "Paints": "/paints/", "Hardware": "/hardware/", "Decoratives": "/decoratives/", "Furniture": "/furniture/", "Modular Kitchens & Wardrobes": "/modular-kitchens/"};
+const SECTION_LINKS = {"Timber": "/timber/", "Plywood": "/plywood/", "Boards": "/boards/", "Doors": "/doors/", "Veneers": "/veneers/", "Paints": "/paints/", "Hardware": "/hardware/", "Decoratives": "/decoratives/", "Furniture": "/furniture/", "Modular Kitchens & Wardrobes": "/modular-kitchens/"};
 const CATEGORIES = [
   { name:"Timber", icon:"tree", desc:"Directly imported hardwood & softwood — kiln-ready, graded, priced right." },
   { name:"Plywood", icon:"layers", desc:"Century Ply, Greenply & more — MR, BWR, marine and fire-retardant grades." },
-  { name:"HDHMR", icon:"board", desc:"Action Tesa HDHMR boards & pre-lam — the modern choice for kitchens & wardrobes." },
-  { name:"Flush Doors", icon:"door", desc:"Solid-core flush doors in every size — ready stock, ready delivery." },
+  { name:"Boards", icon:"board", desc:"HDHMR, MDF & WPC boards, doors and door frames — plain & laminated." },
+  { name:"Doors", icon:"door", desc:"Flush doors & block board in MR, BWR and waterproof grades — every size." },
+  { name:"Veneers", icon:"veneer", desc:"Walnut, oak, teak, ebony & more — every species in crown & quarter cut." },
+  { name:"Decoratives", icon:"pattern", desc:"Laminates, panels, louvers & jali across 3 of the Tricity's biggest galleries." },
   { name:"Paints", icon:"drop", desc:"Asian Paints, Dulux & Sirca — interior, exterior, wood coatings and PU finishes." },
   { name:"Hardware", icon:"handle", desc:"Hafele & Dorset — hinges, channels, locks, handles and kitchen fittings." },
-  { name:"Decoratives", icon:"pattern", desc:"Laminates, veneers, louvers & panels across 3 of the Tricity's biggest galleries." },
-  { name:"Furniture", icon:"chair", desc:"Premium ready furniture crafted from the same materials we sell." },
+  { name:"Furniture", icon:"chair", desc:"Custom beds, wardrobes, sofas, dining & TV units by Perfect Modulars." },
   { name:"Modular Kitchens & Wardrobes", icon:"kitchen", desc:"Designed & built in-house by Perfect Modulars — end-to-end control on quality." },
 ];
 
@@ -478,6 +472,7 @@ const ICONS = {
   layers:'<svg viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4z"/><path d="M3 12l9 4 9-4"/><path d="M3 16l9 4 9-4"/></svg>',
   board:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 10h18M3 14h18"/></svg>',
   door:'<svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="15" cy="12" r="1"/></svg>',
+  veneer:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>',
   drop:'<svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg>',
   handle:'<svg viewBox="0 0 24 24"><path d="M5 12h14"/><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>',
   pattern:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>',
@@ -487,16 +482,27 @@ const ICONS = {
 
 /* ---------- render ---------- */
 document.getElementById("catGrid").innerHTML = CATEGORIES.map((c,i)=>`
-  <div class="cat-card reveal ${i%3===1?'d1':i%3===2?'d2':''}">
+  <div class="cat-card reveal ${i%3===1?'d1':i%3===2?'d2':''}" data-href="${SECTION_LINKS[c.name]||''}" style="cursor:pointer">
     <div class="cat-icon">${ICONS[c.icon]||''}<span class="idx">${String(i+1).padStart(2,'0')}</span></div>
     <div class="cat-body">
-      <h3>${c.name}</h3>
+      <h3><a href="${SECTION_LINKS[c.name]||'#'}" style="color:inherit;text-decoration:none">${c.name}</a></h3>
       <p>${c.desc}</p>
+      <a class="wa-link" href="${SECTION_LINKS[c.name]||'#'}">View range →</a>
       <a class="wa-link" target="_blank" rel="noopener"
          href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hi, I want prices for "+c.name)}">
          Get price on WhatsApp →</a>
     </div>
   </div>`).join("");
+
+/* whole-card click navigation (ignores clicks on inner links, which already navigate themselves) */
+document.querySelectorAll(".cat-card").forEach(card=>{
+  const href = card.dataset.href;
+  if(!href) return;
+  card.addEventListener("click", e=>{
+    if(e.target.closest("a")) return;
+    window.location.href = href;
+  });
+});
 
 document.getElementById("exclusiveChips").innerHTML =
   EXCLUSIVE_BRANDS.map(b=>`<span class="chip exclusive">${b}</span>`).join("");
@@ -504,6 +510,7 @@ document.getElementById("dealerChips").innerHTML =
   DEALER_BRANDS.map(b=>`<span class="chip">${b}</span>`).join("");
 
 document.getElementById("yr").textContent = new Date().getFullYear();
+
 
 /* ---------- scroll reveal ---------- */
 const io = new IntersectionObserver(entries=>{
@@ -524,6 +531,16 @@ document.querySelectorAll(".count").forEach(el=>cio.observe(el));
 
 /* ---------- nav shadow ---------- */
 addEventListener("scroll",()=>document.getElementById("nav").classList.toggle("scrolled",scrollY>10),{passive:true});
+</script>
+
+<script>
+(function(){
+  var btn=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(btn&&links){
+    btn.addEventListener('click',function(){ links.classList.toggle('nav-open'); });
+  }
+})();
 </script>
 </body>
 </html>

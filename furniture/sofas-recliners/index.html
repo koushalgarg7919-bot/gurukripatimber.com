@@ -68,9 +68,20 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 .hub-thumb{width:100%;border-radius:10px;display:block;margin-bottom:6px;border:1.5px solid var(--espresso)}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px}
 
-ul.uses li b{color:var(--teak)}</style></head>
+ul.uses li b{color:var(--teak)}
+.nav-toggle{display:none;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 6px}
+@media(max-width:820px){
+  .nav-toggle{display:block;order:2}
+  nav .wrap{flex-wrap:wrap}
+  .logo{order:1}
+  .wa-nav{order:3}
+  .nav-links{display:none;width:100%;order:4;flex-direction:column;gap:16px;padding:18px 0 6px;border-top:1px solid rgba(246,239,227,.15);margin-top:12px}
+  .nav-links.nav-open{display:flex}
+  .nav-links a{font-size:.95rem}
+}
+</style></head>
 <body>
-<nav><div class="wrap"><a href="../../" class="logo">Guru Kripa <span>Timber</span></a><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20custom%20furniture" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
+<nav id="nav"><div class="wrap"><a href="/" class="logo">Guru Kripa <span>Timber</span></a><button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button><div class="nav-links" id="navLinks"><a href="/timber/">Timber</a><a href="/plywood/">Plywood</a><a href="/boards/">Boards</a><a href="/doors/">Doors</a><a href="/veneers/">Veneers</a><a href="/decoratives/">Decoratives</a><a href="/paints/">Paints</a><a href="/hardware/">Hardware</a><a href="/furniture/">Furniture</a><a href="/modular-kitchens/">Kitchens</a><a href="/about/">About</a></div><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20custom%20furniture" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
 <header class="hero"><div class="wrap">
 <p class="crumbs"><a href="../../">Home</a> › <a href="../">Furniture</a> › Custom Sofas & Recliners</p>
 <p class="eyebrow">Custom-Made by Perfect Modulars · Mohali</p>
@@ -96,4 +107,14 @@ ul.uses li b{color:var(--teak)}</style></head>
 <p style="margin-top:18px"><a class="btn btn-wa" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20discuss%20a%20custom%20furniture%20project" target="_blank" rel="noopener">Discuss your project on WhatsApp</a></p></div></section>
 <footer><div class="wrap">© Guru Kripa Timber & Plywood · Perfect Modulars · C-30, Phase 2, Industrial Area, Mohali (Sahibzada Ajit Singh Nagar), Punjab · <a href="tel:+917696449897" style="color:var(--brass)">+91 76964 49897</a><br>Custom furniture · Beds · Wardrobes · Sofas · Dining · TV units · Serving Chandigarh, Panchkula, Zirakpur & all Punjab-Haryana</div></footer>
 <a class="wa-sticky" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20a%20custom%20quote%20for%20Custom%20Sofas%20%26%20Recliners" target="_blank" rel="noopener">💬 Get a custom quote on WhatsApp</a>
+
+<script>
+(function(){
+  var btn=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(btn&&links){
+    btn.addEventListener('click',function(){ links.classList.toggle('nav-open'); });
+  }
+})();
+</script>
 </body></html>

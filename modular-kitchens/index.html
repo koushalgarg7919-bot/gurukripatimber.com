@@ -74,9 +74,20 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 .t-card:hover{transform:translateY(-5px);box-shadow:7px 7px 0 var(--brass)}
 .t-card h3{font-family:'Anton',sans-serif;font-size:1.1rem;text-transform:uppercase}
 .t-card p{font-size:.76rem;color:#5A4A38;flex:1}
-.t-go{color:var(--wa-dark);font-weight:800;font-size:.85rem}</style></head>
+.t-go{color:var(--wa-dark);font-weight:800;font-size:.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 6px}
+@media(max-width:820px){
+  .nav-toggle{display:block;order:2}
+  nav .wrap{flex-wrap:wrap}
+  .logo{order:1}
+  .wa-nav{order:3}
+  .nav-links{display:none;width:100%;order:4;flex-direction:column;gap:16px;padding:18px 0 6px;border-top:1px solid rgba(246,239,227,.15);margin-top:12px}
+  .nav-links.nav-open{display:flex}
+  .nav-links a{font-size:.95rem}
+}
+</style></head>
 <body>
-<nav><div class="wrap"><a href="../" class="logo">Guru Kripa <span>Timber</span></a><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20modular%20kitchens" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
+<nav id="nav"><div class="wrap"><a href="/" class="logo">Guru Kripa <span>Timber</span></a><button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button><div class="nav-links" id="navLinks"><a href="/timber/">Timber</a><a href="/plywood/">Plywood</a><a href="/boards/">Boards</a><a href="/doors/">Doors</a><a href="/veneers/">Veneers</a><a href="/decoratives/">Decoratives</a><a href="/paints/">Paints</a><a href="/hardware/">Hardware</a><a href="/furniture/">Furniture</a><a href="/modular-kitchens/">Kitchens</a><a href="/about/">About</a></div><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20modular%20kitchens" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
 <header class="hero"><div class="wrap">
 <p class="crumbs"><a href="../">Home</a> › Modular Kitchens</p>
 <p class="eyebrow">Turnkey by Perfect Modulars · Mohali</p>
@@ -97,4 +108,14 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 <h3>Modular Wardrobes</h3><p>sliding wardrobe, walk in wardrobe, modular wardrobe, wardrobe design</p><span class="t-go">View & get quote →</span></a></div></div></section>
 <footer><div class="wrap">© Guru Kripa Timber & Plywood · Perfect Modulars · C-30, Phase 2, Industrial Area, Mohali (Sahibzada Ajit Singh Nagar), Punjab · <a href="tel:+917696449897" style="color:var(--brass)">+91 76964 49897</a><br>Turnkey modular kitchens & wardrobes · Serving all Punjab & Haryana</div></footer>
 <a class="wa-sticky" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20plan%20my%20modular%20kitchen" target="_blank" rel="noopener">💬 Plan your kitchen on WhatsApp</a>
+
+<script>
+(function(){
+  var btn=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(btn&&links){
+    btn.addEventListener('click',function(){ links.classList.toggle('nav-open'); });
+  }
+})();
+</script>
 </body></html>

@@ -72,16 +72,27 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 .wood-img{width:100%;aspect-ratio:12/5;object-fit:cover;border-radius:16px;border:2px solid var(--brass);display:block;margin-top:22px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .hub-thumb{width:100%;border-radius:10px;display:block;margin-bottom:6px;border:1.5px solid var(--espresso)}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+
+.nav-toggle{display:none;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 6px}
+@media(max-width:820px){
+  .nav-toggle{display:block;order:2}
+  nav .wrap{flex-wrap:wrap}
+  .logo{order:1}
+  .wa-nav{order:3}
+  .nav-links{display:none;width:100%;order:4;flex-direction:column;gap:16px;padding:18px 0 6px;border-top:1px solid rgba(246,239,227,.15);margin-top:12px}
+  .nav-links.nav-open{display:flex}
+  .nav-links a{font-size:.95rem}
+}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="../../" class="logo">Guru Kripa <span>Timber</span></a><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20timber" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
+<nav id="nav"><div class="wrap"><a href="/" class="logo">Guru Kripa <span>Timber</span></a><button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button><div class="nav-links" id="navLinks"><a href="/timber/">Timber</a><a href="/plywood/">Plywood</a><a href="/boards/">Boards</a><a href="/doors/">Doors</a><a href="/veneers/">Veneers</a><a href="/decoratives/">Decoratives</a><a href="/paints/">Paints</a><a href="/hardware/">Hardware</a><a href="/furniture/">Furniture</a><a href="/modular-kitchens/">Kitchens</a><a href="/about/">About</a></div><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20timber" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
 <header class="hero"><div class="wrap">
 <p class="crumbs"><a href="../../">Home</a> › <a href="../">Timber</a> › White Oak Wood</p>
 <p class="eyebrow">Direct Importers · Mohali · Serving Punjab & Haryana</p>
 <h1 class="display">White Oak Wood</h1>
 <p class="altnames">Also known as: <b>American White Oak</b></p>
-<img class="wood-img" src="../images/white-oak-wood-mohali.jpg" alt="White Oak Wood (American White Oak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="White Oak Wood Price in India" width="1200" height="500" loading="eager">
+<img class="wood-img" src="../images/white-oak-wood-mohali.jpg" alt="White Oak Wood (American White Oak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="White Oak Wood Price in India" width="1000" height="420" loading="eager">
 <a class="btn btn-wa" href="https://wa.me/917696449897?text=Hi%2C%20what%20is%20today%27s%20rate%20for%20White%20Oak%20Wood%3F" target="_blank" rel="noopener">Get today's rate on WhatsApp</a>
 </div></header>
 <section><div class="wrap">
@@ -116,4 +127,14 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 </div></section>
 <footer><div class="wrap">© Guru Kripa Timber & Plywood · C-30, Phase 2, Industrial Area, Mohali (Sahibzada Ajit Singh Nagar), Punjab · <a href="tel:+917696449897" style="color:var(--brass)">+91 76964 49897</a><br>Best timber in Sahibzada Ajit Singh Nagar · Largest timber range in Punjab · Serving Mohali, Chandigarh, Panchkula, Zirakpur & all Punjab-Haryana</div></footer>
 <a class="wa-sticky" href="https://wa.me/917696449897?text=Hi%2C%20what%20is%20today%27s%20rate%20for%20White%20Oak%20Wood%3F" target="_blank" rel="noopener">💬 Get today's rate on WhatsApp</a>
+
+<script>
+(function(){
+  var btn=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(btn&&links){
+    btn.addEventListener('click',function(){ links.classList.toggle('nav-open'); });
+  }
+})();
+</script>
 </body></html>

@@ -80,10 +80,21 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 .t-price{font-family:'Anton',sans-serif;font-size:1.2rem;color:var(--teak)}
 .t-price small{font-size:.7rem;color:#8a7a63}
 .t-go{color:var(--wa-dark);font-weight:800;font-size:.85rem}
+
+.nav-toggle{display:none;background:none;border:none;color:var(--ivory);font-size:1.6rem;cursor:pointer;line-height:1;padding:4px 6px}
+@media(max-width:820px){
+  .nav-toggle{display:block;order:2}
+  nav .wrap{flex-wrap:wrap}
+  .logo{order:1}
+  .wa-nav{order:3}
+  .nav-links{display:none;width:100%;order:4;flex-direction:column;gap:16px;padding:18px 0 6px;border-top:1px solid rgba(246,239,227,.15);margin-top:12px}
+  .nav-links.nav-open{display:flex}
+  .nav-links a{font-size:.95rem}
+}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="../" class="logo">Guru Kripa <span>Timber</span></a><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20timber" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
+<nav id="nav"><div class="wrap"><a href="/" class="logo">Guru Kripa <span>Timber</span></a><button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button><div class="nav-links" id="navLinks"><a href="/timber/">Timber</a><a href="/plywood/">Plywood</a><a href="/boards/">Boards</a><a href="/doors/">Doors</a><a href="/veneers/">Veneers</a><a href="/decoratives/">Decoratives</a><a href="/paints/">Paints</a><a href="/hardware/">Hardware</a><a href="/furniture/">Furniture</a><a href="/modular-kitchens/">Kitchens</a><a href="/about/">About</a></div><a class="wa-nav" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20to%20enquire%20about%20timber" target="_blank" rel="noopener">WhatsApp Us</a></div></nav>
 <header class="hero"><div class="wrap">
 <p class="crumbs"><a href="../">Home</a> › Timber</p>
 <p class="eyebrow">Direct Importers · Gandhidham Operations · Mohali Yard</p>
@@ -94,51 +105,51 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 <section><div class="wrap">
 <h2 class="display">Choose your timber</h2>
 <div class="t-grid"><a class="t-card" href="sheesham/">
-<img class="hub-thumb" src="images/sheesham-wood-mohali-thumb.jpg" alt="Sheesham Wood (Shisham) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Sheesham Wood Price in Mohali, Chandigarh" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/sheesham-wood-mohali-thumb.jpg" alt="Sheesham Wood (Shisham) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Sheesham Wood Price in Mohali, Chandigarh" width="1000" height="420" loading="lazy">
 <h3>Sheesham Wood</h3><p>Shisham, Indian Rosewood, Tali</p>
 <span class="t-price">₹1,600 – ₹2,800 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="mp-teak/">
-<img class="hub-thumb" src="images/mp-teak-wood-mohali-thumb.jpg" alt="MP Teak / Sagwan (CP Teak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="MP Teak (Sagwan) Price in Mohali — CP Teak" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/mp-teak-wood-mohali-thumb.jpg" alt="MP Teak / Sagwan (CP Teak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="MP Teak (Sagwan) Price in Mohali — CP Teak" width="1000" height="420" loading="lazy">
 <h3>MP Teak / Sagwan</h3><p>CP Teak, MP Teak, Sagwan, Central Province Teak, Madhya Pradesh Teak</p>
 <span class="t-price">₹3,000 – ₹5,500 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="imported-teak/">
-<img class="hub-thumb" src="images/imported-teak-wood-mohali-thumb.jpg" alt="Imported Teak (Mexican Teak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Imported Teak Price in Mohali — Mexican, Brazilian, Ivory Coast" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/imported-teak-wood-mohali-thumb.jpg" alt="Imported Teak (Mexican Teak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Imported Teak Price in Mohali — Mexican, Brazilian, Ivory Coast" width="1000" height="420" loading="lazy">
 <h3>Imported Teak</h3><p>Mexican Teak, Brazilian Teak, Ivory Coast Teak, African Teak</p>
 <span class="t-price">₹1,600 – ₹2,400 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="pine/">
-<img class="hub-thumb" src="images/pine-wood-mohali-thumb.jpg" alt="Pine Wood (Chir Pine) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Pine Wood Price in Mohali, Chandigarh — Imported &amp; Chir Pine" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/pine-wood-mohali-thumb.jpg" alt="Pine Wood (Chir Pine) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Pine Wood Price in Mohali, Chandigarh — Imported &amp; Chir Pine" width="1000" height="420" loading="lazy">
 <h3>Pine Wood</h3><p>Chir Pine, Imported Pine, Deal Wood</p>
 <span class="t-price">₹900 – ₹1,500 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="meranti/">
-<img class="hub-thumb" src="images/meranti-wood-mohali-thumb.jpg" alt="Meranti / Marandi Wood (Red Meranti) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Meranti (Marandi) Wood Price — Red &amp; Yellow Meranti" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/meranti-wood-mohali-thumb.jpg" alt="Meranti / Marandi Wood (Red Meranti) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Meranti (Marandi) Wood Price — Red &amp; Yellow Meranti" width="1000" height="420" loading="lazy">
 <h3>Meranti / Marandi Wood</h3><p>Red Meranti, Yellow Meranti, Lal Marandi</p>
 <span class="t-price">₹1,100 – ₹1,800 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="partal/">
-<img class="hub-thumb" src="images/partal-wood-mohali-thumb.jpg" alt="Partal Wood (Partal Lakdi) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Partal Wood Price in Mohali, Punjab" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/partal-wood-mohali-thumb.jpg" alt="Partal Wood (Partal Lakdi) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Partal Wood Price in Mohali, Punjab" width="1000" height="420" loading="lazy">
 <h3>Partal Wood</h3><p>Partal Lakdi, Himalayan Spruce/Fir</p>
 <span class="t-price">₹550 – ₹900 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="hollock/">
-<img class="hub-thumb" src="images/hollock-wood-mohali-thumb.jpg" alt="Assam Hollock Wood (Hollock) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Assam Hollock Wood Price" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/hollock-wood-mohali-thumb.jpg" alt="Assam Hollock Wood (Hollock) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Assam Hollock Wood Price" width="1000" height="420" loading="lazy">
 <h3>Assam Hollock Wood</h3><p>Hollock, Hollong, Assam Hollak</p>
 <span class="t-price">₹1,000 – ₹1,600 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="kapur-sal/">
-<img class="hub-thumb" src="images/kapur-sal-wood-mohali.jpg" alt="Kapur Sal Wood (Kapur Wood) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Kapur Sal Wood Price" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/kapur-sal-wood-mohali-thumb.jpg" alt="Kapur Sal Wood (Kapur Wood) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Kapur Sal Wood Price" width="1000" height="420" loading="lazy">
 <h3>Kapur Sal Wood</h3><p>Kapur Wood, Kapur Saal</p>
 <span class="t-price">₹1,400 – ₹2,100 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="malaysian-sal/">
-<img class="hub-thumb" src="images/malaysian-sal-wood-mohali.svg" alt="Malaysian Sal Wood (Malaysian Saal) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Malaysian Sal Wood Price" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/malaysian-sal-wood-mohali.svg" alt="Malaysian Sal Wood (Malaysian Saal) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Malaysian Sal Wood Price" width="1000" height="420" loading="lazy">
 <h3>Malaysian Sal Wood</h3><p>Malaysian Saal</p>
 <span class="t-price">₹1,300 – ₹1,900 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="white-oak/">
-<img class="hub-thumb" src="images/white-oak-wood-mohali-thumb.jpg" alt="White Oak Wood (American White Oak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="White Oak Wood Price in India" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/white-oak-wood-mohali-thumb.jpg" alt="White Oak Wood (American White Oak) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="White Oak Wood Price in India" width="1000" height="420" loading="lazy">
 <h3>White Oak Wood</h3><p>American White Oak</p>
 <span class="t-price">₹3,200 – ₹4,800 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="douglas-fir/">
-<img class="hub-thumb" src="images/douglas-fir-wood-mohali-thumb.jpg" alt="Douglas Fir Wood (Douglas Wood) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Douglas Fir Wood Price" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/douglas-fir-wood-mohali-thumb.jpg" alt="Douglas Fir Wood (Douglas Wood) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Douglas Fir Wood Price" width="1000" height="420" loading="lazy">
 <h3>Douglas Fir Wood</h3><p>Douglas Wood, Oregon Pine</p>
 <span class="t-price">₹1,600 – ₹2,400 <small>/ cft*</small></span>
 <span class="t-go">View details & rate →</span></a><a class="t-card" href="live-edge-slabs/">
-<img class="hub-thumb" src="images/live-edge-wood-slab-mohali-thumb.jpg" alt="Live Edge Wood Slabs (Live Wood Table Tops) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Live Edge Wood Slabs &amp; Table Tops in Mohali" width="1200" height="500" loading="lazy">
+<img class="hub-thumb" src="images/live-edge-wood-slab-mohali-thumb.jpg" alt="Live Edge Wood Slabs (Live Wood Table Tops) at Guru Kripa Timber &amp; Plywood, Mohali — Punjab&#x27;s largest timber range" title="Live Edge Wood Slabs &amp; Table Tops in Mohali" width="1000" height="420" loading="lazy">
 <h3>Live Edge Wood Slabs</h3><p>Live Wood Table Tops, Natural Edge Slabs</p>
 <span class="t-price">₹450 – ₹1,500 <small>/ sq ft*</small></span>
 <span class="t-go">View details & rate →</span></a></div>
@@ -154,4 +165,14 @@ footer{background:var(--espresso);color:#A8987F;padding:32px 0 100px;font-size:.
 </div></section>
 <footer><div class="wrap">© Guru Kripa Timber & Plywood · C-30, Phase 2, Industrial Area, Mohali (Sahibzada Ajit Singh Nagar), Punjab · <a href="tel:+917696449897" style="color:var(--brass)">+91 76964 49897</a><br>Best timber in Sahibzada Ajit Singh Nagar · Largest timber range in Punjab</div></footer>
 <a class="wa-sticky" href="https://wa.me/917696449897?text=Hi%2C%20I%20want%20today%27s%20timber%20rate%20list" target="_blank" rel="noopener">💬 Get rate list on WhatsApp</a>
+
+<script>
+(function(){
+  var btn=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+  if(btn&&links){
+    btn.addEventListener('click',function(){ links.classList.toggle('nav-open'); });
+  }
+})();
+</script>
 </body></html>
